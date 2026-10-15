@@ -19,22 +19,25 @@ class DetailsPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.network(img),
-          SizedBox(width: size.height * 0.02),
-          Text(
-            title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(img),
+            SizedBox(width: size.height * 0.02),
+            Text(
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              ),
             ),
-          ),
-          SizedBox(width: size.height * 0.02),
-          Text('score: $score'),
-          Text(synopsis),
-        ],
+            SizedBox(width: size.height * 0.02),
+            Text('score: $score'),
+            Text(synopsis),
+          ],
+        ),
       ),
     );
   }
